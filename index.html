@@ -1,0 +1,341 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Reefer Garden</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e5e7eb;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .glow-purple {
+            box-shadow: 0 0 10px #a855f7;
+        }
+        .glow-green {
+            box-shadow: 0 0 10px #84cc16;
+        }
+        .glow-orange {
+            box-shadow: 0 0 10px #f97316;
+        }
+        nav {
+            background-color: #111827;
+            padding: 16px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav h1 {
+            font-size: 1.875rem;
+            font-weight: bold;
+            color: #a855f7;
+        }
+        nav a {
+            color: #d1d5db;
+            text-decoration: none;
+            margin-left: 16px;
+        }
+        nav a:hover {
+            color: #a855f7;
+        }
+        header {
+            text-align: center;
+            padding: 64px 0;
+            background: url('https://via.placeholder.com/1200x500?text=Vibrant+Reef+Tank') center/cover;
+        }
+        header h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #a855f7;
+            margin-bottom: 16px;
+        }
+        header p {
+            font-size: 1.5rem;
+            color: #d1d5db;
+            margin-bottom: 32px;
+        }
+        header button {
+            background-color: #a855f7;
+            color: white;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.125rem;
+        }
+        header button:hover {
+            background-color: #9333ea;
+        }
+        section {
+            padding: 48px 0;
+            text-align: center;
+        }
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #a855f7;
+            margin-bottom: 32px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        .category, .product {
+            background-color: #1f2937;
+            padding: 24px;
+            border-radius: 8px;
+        }
+        .category img, .product img {
+            width: 100%;
+            height: 192px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        .category h3, .product h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #84cc16;
+            margin-bottom: 16px;
+        }
+        .category p, .product p {
+            color: #d1d5db;
+            margin-bottom: 16px;
+            font-size: 0.875rem;
+        }
+        .category a {
+            display: inline-block;
+            background-color: #a855f7;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        .category a:hover {
+            background-color: #9333ea;
+        }
+        .product .price {
+            color: #f97316;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        .product button {
+            background-color: #a855f7;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .product button:hover {
+            background-color: #9333ea;
+        }
+        .sale-banner {
+            background-color: #f97316;
+            color: #1a1a1a;
+            padding: 16px;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 32px;
+        }
+        footer {
+            background-color: #111827;
+            padding: 24px;
+            text-align: center;
+            color: #d1d5db;
+        }
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            header h1 {
+                font-size: 2.5rem;
+            }
+            header p {
+                font-size: 1.125rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="container">
+            <h1>The Reefer Garden</h1>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="#coral">Live Coral</a>
+                <a href="fish.html">Fish & Inverts</a>
+                <a href="supplies.html">Supplies</a>
+                <a href="#contact">Contact</a>
+                <a href="checkout.html" class="glow-orange">View Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="container">
+            <h1>Discover Vibrant Reef Life</h1>
+            <p>Explore our premium corals, fish, and aquarium supplies at The Reefer Garden.</p>
+            <button class="glow-purple">Shop Now</button>
+        </div>
+    </header>
+
+    <!-- Special Offers Section -->
+    <section>
+        <div class="container">
+            <div class="sale-banner glow-orange">
+                Limited Time Offer: Up to 50% Off Select Corals! Shop Now!
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section>
+        <div class="container">
+            <h2>Featured Corals</h2>
+            <div class="grid">
+                <div class="product glow-purple">
+                    <img src="https://via.placeholder.com/300x200?text=Euphyllia+Ancora" alt="Euphyllia Ancora">
+                    <h3>Euphyllia Ancora</h3>
+                    <p>Hammer coral with glowing green tips.</p>
+                    <p class="price">$69.99</p>
+                    <button class="glow-purple add-to-cart" data-name="Euphyllia Ancora" data-price="69.99">Add to Cart</button>
+                </div>
+                <div class="product glow-purple">
+                    <img src="https://via.placeholder.com/300x200?text=Scolymia+Coral" alt="Scolymia Coral">
+                    <h3>Scolymia Coral</h3>
+                    <p>Bright, solitary coral with vivid colors.</p>
+                    <p class="price">$89.99</p>
+                    <button class="glow-purple add-to-cart" data-name="Scolymia Coral" data-price="89.99">Add to Cart</button>
+                </div>
+                <div class="product glow-purple">
+                    <img src="https://via.placeholder.com/300x200?text=Acropora+Coral" alt="Acropora Coral">
+                    <h3>Acropora Coral</h3>
+                    <p>Branching SPS coral with vibrant hues.</p>
+                    <p class="price">$99.99</p>
+                    <button class="glow-purple add-to-cart" data-name="Acropora Coral" data-price="99.99">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop by Type Section -->
+    <section id="coral">
+        <div class="container">
+            <h2>Shop by Type</h2>
+            <div class="grid">
+                <div class="category glow-purple">
+                    <img src="https://via.placeholder.com/300x200?text=SPS+Coral" alt="SPS Coral">
+                    <h3>SPS Coral</h3>
+                    <p>Small Polyp Stony corals for experienced reefers.</p>
+                    <a href="sps.html" class="glow-purple">Shop SPS</a>
+                </div>
+                <div class="category glow-purple">
+                    <img src="https://via.placeholder.com/300x200?text=LPS+Coral" alt="LPS Coral">
+                    <h3>LPS Coral</h3>
+                    <p>Large Polyp Stony corals, vibrant and hardy.</p>
+                    <a href="lps.html" class="glow-purple">Shop LPS</a>
+                </div>
+                <div class="category glow-purple">
+                    <img src="https://via.placeholder.com/300x200?text=Beginner+Coral" alt="Beginner Coral">
+                    <h3>Beginner Coral</h3>
+                    <p>Easy-to-care-for corals for new hobbyists.</p>
+                    <a href="beginner.html" class="glow-purple">Shop Beginner</a>
+                </div>
+                <div class="category glow-purple">
+                    <img src="https://via.placeholder.com/300x200?text=Clearance" alt="Clearance">
+                    <h3>Clearance</h3>
+                    <p>Discounted corals and marine life.</p>
+                    <a href="clearance.html" class="glow-purple">Shop Clearance</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Email: info@reefergarden.com | Phone: (555) 123-4567</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 The Reefer Garden. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mock cart functionality using localStorage
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingItem = cart.find(item => item.name === name);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ name, price, quantity: 1 });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${name} added to cart!`);
+            });
+        });
+    </script>
+</body>
+</html>

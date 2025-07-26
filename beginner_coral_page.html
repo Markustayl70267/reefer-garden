@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner Coral - The Reefer Garden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e5e7eb;
+            font-family: 'Arial', sans-serif;
+        }
+        .glow-purple {
+            box-shadow: 0 0 10px #a855f7;
+        }
+        .glow-green {
+            box-shadow: 0 0 10px #84cc16;
+        }
+        .glow-orange {
+            box-shadow: 0 0 10px #f97316;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-purple-500">The Reefer Garden</h1>
+            <div class="space-x-4">
+                <a href="index.html" class="text-gray-300 hover:text-purple-500">Home</a>
+                <a href="index.html#coral" class="text-gray-300 hover:text-lime-500">Live Coral</a>
+                <a href="fish.html" class="text-gray-300 hover:text-orange-500">Fish & Inverts</a>
+                <a href="index.html#contact" class="text-gray-300 hover:text-purple-500">Contact</a>
+                <a href="checkout.html" class="text-gray-300 hover:text-orange-500 glow-orange">View Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Beginner Coral Section -->
+    <section class="container mx-auto py-12">
+        <h2 class="text-3xl font-bold text-purple-500 mb-8 text-center">Beginner Coral</h2>
+        <p class="text-gray-300 mb-8 text-center">Perfect for new hobbyists, these corals are easy to care for and add vibrant beauty to your tank.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Beginner Product 1 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Mushroom+Coral" alt="Mushroom Coral" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Mushroom Coral</h3>
+                <p class="text-gray-300 mb-4">Soft, colorful coral, ideal for beginners.</p>
+                <p class="text-orange-500 font-bold">$19.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Mushroom Coral" data-price="19.99">Add to Cart</button>
+            </div>
+            <!-- Beginner Product 2 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Zoanthid+Polyps" alt="Zoanthid Polyps" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Zoanthid Polyps</h3>
+                <p class="text-gray-300 mb-4">Bright, easy-to-grow polyps in various colors.</p>
+                <p class="text-orange-500 font-bold">$24.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Zoanthid Polyps" data-price="24.99">Add to Cart</button>
+            </div>
+            <!-- Beginner Product 3 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Xenia+Coral" alt="Xenia Coral" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Xenia Coral</h3>
+                <p class="text-gray-300 mb-4">Pulsing soft coral, low-maintenance and vibrant.</p>
+                <p class="text-orange-500 font-bold">$29.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Xenia Coral" data-price="29.99">Add to Cart</button>
+            </div>
+            <!-- Beginner Product 4 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Green+Star+Polyps" alt="Green Star Polyps" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Green Star Polyps</h3>
+                <p class="text-gray-300 mb-4">Fast-growing, mat-like coral with neon green polyps.</p>
+                <p class="text-orange-500 font-bold">$22.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Green Star Polyps" data-price="22.99">Add to Cart</button>
+            </div>
+            <!-- Beginner Product 5 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Leather+Coral" alt="Leather Coral" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Leather Coral</h3>
+                <p class="text-gray-300 mb-4">Soft coral with a unique, leathery texture.</p>
+                <p class="text-orange-500 font-bold">$34.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Leather Coral" data-price="34.99">Add to Cart</button>
+            </div>
+            <!-- Beginner Product 6 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Kenya+Tree+Coral" alt="Kenya Tree Coral" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Kenya Tree Coral</h3>
+                <p class="text-gray-300 mb-4">Soft, branching coral, easy to propagate.</p>
+                <p class="text-orange-500 font-bold">$27.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Kenya Tree Coral" data-price="27.99">Add to Cart</button>
+            </div>
+            <!-- Beginner Product 7 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Toadstool+Coral" alt="Toadstool Coral" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Toadstool Coral</h3>
+                <p class="text-gray-300 mb-4">Soft coral with a mushroom-like cap.</p>
+                <p class="text-orange-500 font-bold">$32.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Toadstool Coral" data-price="32.99">Add to Cart</button>
+            </div>
+            <!-- Beginner Product 8 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Clove+Polyps" alt="Clove Polyps" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Clove Polyps</h3>
+                <p class="text-gray-300 mb-4">Vibrant, waving polyps, easy to care for.</p>
+                <p class="text-orange-500 font-bold">$19.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Clove Polyps" data-price="19.99">Add to Cart</button>
+            </div>
+            <!-- Beginner Product 9 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Anthelia+Coral" alt="Anthelia Coral" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Anthelia Coral</h3>
+                <p class="text-gray-300 mb-4">Soft, pulsing coral with a delicate appearance.</p>
+                <p class="text-orange-500 font-bold">$24.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Anthelia Coral" data-price="24.99">Add to Cart</button>
+            </div>
+            <!-- Beginner Product 10 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Palythoa+Coral" alt="Palythoa Coral" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Palythoa Coral</h3>
+                <p class="text-gray-300 mb-4">Colorful, hardy polyps for new reefers.</p>
+                <p class="text-orange-500 font-bold">$21.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Palythoa Coral" data-price="21.99">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center">
+        <p class="text-gray-300">© 2025 The Reefer Garden. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mock cart functionality using localStorage
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingItem = cart.find(item => item.name === name);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ name, price, quantity: 1 });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${name} added to cart!`);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96567ad4099a8cd5',t:'MTc1MzU1OTk5MC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

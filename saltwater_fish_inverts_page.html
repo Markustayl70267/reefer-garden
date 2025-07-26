@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saltwater Fish & Inverts - The Reefer Garden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e5e7eb;
+            font-family: 'Arial', sans-serif;
+        }
+        .glow-purple {
+            box-shadow: 0 0 10px #a855f7;
+        }
+        .glow-green {
+            box-shadow: 0 0 10px #84cc16;
+        }
+        .glow-orange {
+            box-shadow: 0 0 10px #f97316;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-purple-500">The Reefer Garden</h1>
+            <div class="space-x-4">
+                <a href="index.html" class="text-gray-300 hover:text-purple-500">Home</a>
+                <a href="index.html#coral" class="text-gray-300 hover:text-lime-500">Live Coral</a>
+                <a href="fish.html" class="text-gray-300 hover:text-orange-500">Fish & Inverts</a>
+                <a href="index.html#contact" class="text-gray-300 hover:text-purple-500">Contact</a>
+                <a href="checkout.html" class="text-gray-300 hover:text-orange-500 glow-orange">View Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fish & Inverts Section -->
+    <section class="container mx-auto py-12">
+        <h2 class="text-3xl font-bold text-orange-500 mb-8 text-center">Saltwater Fish & Inverts</h2>
+        <p class="text-gray-300 mb-8 text-center">Add vibrant fish and helpful inverts to your aquarium with our curated selection.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Fish Product 1 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-orange">
+                <img src="https://via.placeholder.com/300x200?text=Clownfish" alt="Clownfish" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Ocellaris Clownfish</h3>
+                <p class="text-gray-300 mb-4">Classic orange clownfish, hardy and vibrant.</p>
+                <p class="text-purple-500 font-bold">$24.99</p>
+                <button class="mt-4 bg-orange-600 text-white px-4 py-2 rounded glow-orange hover:bg-orange-700 add-to-cart" data-name="Ocellaris Clownfish" data-price="24.99">Add to Cart</button>
+            </div>
+            <!-- Fish Product 2 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-orange">
+                <img src="https://via.placeholder.com/300x200?text=Cleaner+Shrimp" alt="Cleaner Shrimp" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Cleaner Shrimp</h3>
+                <p class="text-gray-300 mb-4">Helpful inverts that clean your tank.</p>
+                <p class="text-purple-500 font-bold">$19.99</p>
+                <button class="mt-4 bg-orange-600 text-white px-4 py-2 rounded glow-orange hover:bg-orange-700 add-to-cart" data-name="Cleaner Shrimp" data-price="19.99">Add to Cart</button>
+            </div>
+            <!-- Fish Product 3 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-orange">
+                <img src="https://via.placeholder.com/300x200?text=Blue+Tang" alt="Blue Tang" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Blue Tang</h3>
+                <p class="text-gray-300 mb-4">Bright blue fish, a reef tank favorite.</p>
+                <p class="text-purple-500 font-bold">$59.99</p>
+                <button class="mt-4 bg-orange-600 text-white px-4 py-2 rounded glow-orange hover:bg-orange-700 add-to-cart" data-name="Blue Tang" data-price="59.99">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center">
+        <p class="text-gray-300">© 2025 The Reefer Garden. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mock cart functionality using localStorage
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingItem = cart.find(item => item.name === name);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ name, price, quantity: 1 });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${name} added to cart!`);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9656783e69008cd5',t:'MTc1MzU1OTg4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

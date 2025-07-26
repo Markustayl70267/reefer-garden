@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - The Reefer Garden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e5e7eb;
+            font-family: 'Arial', sans-serif;
+        }
+        .glow-purple {
+            box-shadow: 0 0 10px #a855f7;
+        }
+        .glow-green {
+            box-shadow: 0 0 10px #84cc16;
+        }
+        .glow-orange {
+            box-shadow: 0 0 10px #f97316;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-purple-500">The Reefer Garden</h1>
+            <div class="space-x-4">
+                <a href="index.html" class="text-gray-300 hover:text-purple-500">Home</a>
+                <a href="index.html#coral" class="text-gray-300 hover:text-lime-500">Live Coral</a>
+                <a href="fish.html" class="text-gray-300 hover:text-orange-500">Fish & Inverts</a>
+                <a href="index.html#contact" class="text-gray-300 hover:text-purple-500">Contact</a>
+                <a href="checkout.html" class="text-gray-300 hover:text-orange-500 glow-orange">View Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Checkout Section -->
+    <section class="container mx-auto py-12">
+        <h2 class="text-3xl font-bold text-purple-500 mb-8 text-center">Checkout</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Form Section -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <h3 class="text-xl font-semibold text-lime-500 mb-4">Shipping & Payment</h3>
+                <form id="checkout-form">
+                    <input type="text" placeholder="Full Name" class="w-full p-2 mb-4 bg-gray-700 rounded">
+                    <input type="email" placeholder="Email" class="w-full p-2 mb-4 bg-gray-700 rounded">
+                    <input type="text" placeholder="Address" class="w-full p-2 mb-4 bg-gray-700 rounded">
+                    <input type="text" placeholder="City" class="w-full p-2 mb-4 bg-gray-700 rounded">
+                    <input type="text" placeholder="State" class="w-full p-2 mb-4 bg-gray-700 rounded">
+                    <input type="text" placeholder="ZIP Code" class="w-full p-2 mb-4 bg-gray-700 rounded">
+                    <select class="w-full p-2 mb-4 bg-gray-700 rounded">
+                        <option>Credit Card</option>
+                        <option>PayPal</option>
+                        <option>Apple Pay</option>
+                    </select>
+                    <input type="text" placeholder="Card Number" class="w-full p-2 mb-4 bg-gray-700 rounded" id="card-number">
+                    <input type="text" placeholder="Expiry Date" class="w-full p-2 mb-4 bg-gray-700 rounded">
+                    <input type="text" placeholder="CVV" class="w-full p-2 mb-4 bg-gray-700 rounded">
+                    <input type="text" placeholder="Promo Code" class="w-full p-2 mb-4 bg-gray-700 rounded">
+                    <button type="submit" class="w-full bg-purple-600 text-white p-2 rounded glow-purple hover:bg-purple-700">Place Order</button>
+                </form>
+            </div>
+            <!-- Order Summary Section -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <h3 class="text-xl font-semibold text-lime-500 mb-4">Order Summary</h3>
+                <div id="order-summary"></div>
+                <p class="text-orange-500 font-bold mt-4">Total: $ <span id="total">0.00</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center">
+        <p class="text-gray-300">© 2025 The Reefer Garden. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Load cart from localStorage
+        function loadCart() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const orderSummary = document.getElementById('order-summary');
+            const totalElement = document.getElementById('total');
+            let total = 0;
+            orderSummary.innerHTML = '';
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                orderSummary.innerHTML += `
+                    <div class="flex justify-between mb-2">
+                        <p>${item.name} x${item.quantity}</p>
+                        <p>$${itemTotal.toFixed(2)}</p>
+                    </div>`;
+            });
+            totalElement.textContent = total.toFixed(2);
+        }
+
+        // Handle form submission
+        document.getElementById('checkout-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Order placed successfully!');
+            localStorage.removeItem('cart');
+            loadCart();
+        });
+
+        // Load cart on page load
+        window.onload = loadCart;
+    </script>
+</body>
+</html>

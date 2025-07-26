@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPS Coral - The Reefer Garden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e5e7eb;
+            font-family: 'Arial', sans-serif;
+        }
+        .glow-purple {
+            box-shadow: 0 0 10px #a855f7;
+        }
+        .glow-green {
+            box-shadow: 0 0 10px #84cc16;
+        }
+        .glow-orange {
+            box-shadow: 0 0 10px #f97316;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-purple-500">The Reefer Garden</h1>
+            <div class="space-x-4">
+                <a href="index.html" class="text-gray-300 hover:text-purple-500">Home</a>
+                <a href="index.html#coral" class="text-gray-300 hover:text-lime-500">Live Coral</a>
+                <a href="fish.html" class="text-gray-300 hover:text-orange-500">Fish & Inverts</a>
+                <a href="index.html#contact" class="text-gray-300 hover:text-purple-500">Contact</a>
+                <a href="checkout.html" class="text-gray-300 hover:text-orange-500 glow-orange">View Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SPS Coral Section -->
+    <section class="container mx-auto py-12">
+        <h2 class="text-3xl font-bold text-purple-500 mb-8 text-center">SPS Coral</h2>
+        <p class="text-gray-300 mb-8 text-center">Explore our selection of Small Polyp Stony corals, perfect for experienced reefers seeking vibrant, branching additions to their tanks.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- SPS Product 1 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Acropora+Millepora" alt="Acropora Millepora" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Acropora Millepora</h3>
+                <p class="text-gray-300 mb-4">Bright green branching coral with delicate tips.</p>
+                <p class="text-orange-500 font-bold">$59.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Acropora Millepora" data-price="59.99">Add to Cart</button>
+            </div>
+            <!-- SPS Product 2 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Stylophora+Pistillata" alt="Stylophora Pistillata" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Stylophora Pistillata</h3>
+                <p class="text-gray-300 mb-4">Vibrant pink branching coral, a reef favorite.</p>
+                <p class="text-orange-500 font-bold">$49.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Stylophora Pistillata" data-price="49.99">Add to Cart</button>
+            </div>
+            <!-- SPS Product 3 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Montipora+Capricornis" alt="Montipora Capricornis" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Montipora Capricornis</h3>
+                <p class="text-gray-300 mb-4">Plating coral with vivid purple hues.</p>
+                <p class="text-orange-500 font-bold">$44.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Montipora Capricornis" data-price="44.99">Add to Cart</button>
+            </div>
+            <!-- SPS Product 4 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Acropora+Formosa" alt="Acropora Formosa" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Acropora Formosa</h3>
+                <p class="text-gray-300 mb-4">Deep blue branching coral, striking in any tank.</p>
+                <p class="text-orange-500 font-bold">$64.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Acropora Formosa" data-price="64.99">Add to Cart</button>
+            </div>
+            <!-- SPS Product 5 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Seriatopora+Caliendrum" alt="Seriatopora Caliendrum" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Seriatopora Caliendrum</h3>
+                <p class="text-gray-300 mb-4">Birdsnest coral with fine, delicate branches.</p>
+                <p class="text-orange-500 font-bold">$39.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Seriatopora Caliendrum" data-price="39.99">Add to Cart</button>
+            </div>
+            <!-- SPS Product 6 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Acropora+Tenuis" alt="Acropora Tenuis" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Acropora Tenuis</h3>
+                <p class="text-gray-300 mb-4">Colorful branching coral with neon highlights.</p>
+                <p class="text-orange-500 font-bold">$69.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Acropora Tenuis" data-price="69.99">Add to Cart</button>
+            </div>
+            <!-- SPS Product 7-->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Montipora+Digitata" alt="Montipora Digitata" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Montipora Digitata</h3>
+                <p class="text-gray-300 mb-4">Finger-like coral with vibrant green tones.</p>
+                <p class="text-orange-500 font-bold">$34.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Montipora Digitata" data-price="34.99">Add to Cart</button>
+            </div>
+            <!-- SPS Product 8 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Acropora+Nasuta" alt="Acropora Nasuta" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Acropora Nasuta</h3>
+                <p class="text-gray-300 mb-4">Elegant branching coral with pastel hues.</p>
+                <p class="text-orange-500 font-bold">$54.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Acropora Nasuta" data-price="54.99">Add to Cart</button>
+            </div>
+            <!-- SPS Product 9 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Pocillopora+Damicornis" alt="Pocillopora Damicornis" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Pocillopora Damicornis</h3>
+                <p class="text-gray-300 mb-4">Bushy coral with bright pink polyps.</p>
+                <p class="text-orange-500 font-bold">$42.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Pocillopora Damicornis" data-price="42.99">Add to Cart</button>
+            </div>
+            <!-- SPS Product 10 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Acropora+Humilis" alt="Acropora Humilis" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Acropora Humilis</h3>
+                <p class="text-gray-300 mb-4">Compact branching coral with vivid colors.</p>
+                <p class="text-orange-500 font-bold">$49.99</p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Acropora Humilis" data-price="49.99">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center">
+        <p class="text-gray-300">© 2025 The Reefer Garden. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mock cart functionality using localStorage
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingItem = cart.find(item => item.name === name);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ name, price, quantity: 1 });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${name} added to cart!`);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96567ba45c798cd5',t:'MTc1MzU2MDAyMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

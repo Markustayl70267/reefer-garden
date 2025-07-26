@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clearance Coral - The Reefer Garden</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #e5e7eb;
+            font-family: 'Arial', sans-serif;
+        }
+        .glow-purple {
+            box-shadow: 0 0 10px #a855f7;
+        }
+        .glow-green {
+            box-shadow: 0 0 10px #84cc16;
+        }
+        .glow-orange {
+            box-shadow: 0 0 10px #f97316;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="bg-gray-900 p-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold text-purple-500">The Reefer Garden</h1>
+            <div class="space-x-4">
+                <a href="index.html" class="text-gray-300 hover:text-purple-500">Home</a>
+                <a href="index.html#coral" class="text-gray-300 hover:text-lime-500">Live Coral</a>
+                <a href="fish.html" class="text-gray-300 hover:text-orange-500">Fish & Inverts</a>
+                <a href="index.html#contact" class="text-gray-300 hover:text-purple-500">Contact</a>
+                <a href="checkout.html" class="text-gray-300 hover:text-orange-500 glow-orange">View Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Clearance Coral Section -->
+    <section class="container mx-auto py-12">
+        <h2 class="text-3xl font-bold text-purple-500 mb-8 text-center">Clearance Coral</h2>
+        <p class="text-gray-300 mb-8 text-center">Grab these discounted corals before they're gone! Perfect for adding unique pieces to your reef tank.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Clearance Product 1 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Branching+Montipora" alt="Branching Montipora" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Branching Montipora</h3>
+                <p class="text-gray-300 mb-4">Vibrant green coral, slightly imperfect but beautiful.</p>
+                <p class="text-orange-500 font-bold">$29.99 <span class="line-through text-gray-500">$49.99</span></p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Branching Montipora" data-price="29.99">Add to Cart</button>
+            </div>
+            <!-- Clearance Product 2 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Zoanthid+Frag" alt="Zoanthid Frag" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Zoanthid Frag</h3>
+                <p class="text-gray-300 mb-4">Small frag of colorful polyps, great deal.</p>
+                <p class="text-orange-500 font-bold">$14.99 <span class="line-through text-gray-500">$29.99</span></p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Zoanthid Frag" data-price="14.99">Add to Cart</button>
+            </div>
+            <!-- Clearance Product 3 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Leather+Coral" alt="Leather Coral" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Leather Coral</h3>
+                <p class="text-gray-300 mb-4">Soft coral, slightly faded but still vibrant.</p>
+                <p class="text-orange-500 font-bold">$19.99 <span class="line-through text-gray-500">$39.99</span></p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Leather Coral" data-price="19.99">Add to Cart</button>
+            </div>
+            <!-- Clearance Product 4 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Mushroom+Frag" alt="Mushroom Frag" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Mushroom Frag</h3>
+                <p class="text-gray-300 mb-4">Single mushroom polyp, perfect for small tanks.</p>
+                <p class="text-orange-500 font-bold">$9.99 <span class="line-through text-gray-500">$19.99</span></p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Mushroom Frag" data-price="9.99">Add to Cart</button>
+            </div>
+            <!-- Clearance Product 5 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Xenia+Frag" alt="Xenia Frag" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Xenia Frag</h3>
+                <p class="text-gray-300 mb-4">Small pulsing xenia, quick to grow.</p>
+                <p class="text-orange-500 font-bold">$12.99 <span class="line-through text-gray-500">$24.99</span></p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Xenia Frag" data-price="12.99">Add to Cart</button>
+            </div>
+            <!-- Clearance Product 6 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Green+Star+Polyp+Frag" alt="Green Star Polyp Frag" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Green Star Polyp Frag</h3>
+                <p class="text-gray-300 mb-4">Small mat of neon green polyps.</p>
+                <p class="text-orange-500 font-bold">$15.99 <span class="line-through text-gray-500">$29.99</span></p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Green Star Polyp Frag" data-price="15.99">Add to Cart</button>
+            </div>
+            <!-- Clearance Product 7 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Kenya+Tree+Frag" alt="Kenya Tree Frag" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Kenya Tree Frag</h3>
+                <p class="text-gray-300 mb-4">Small branching soft coral, great deal.</p>
+                <p class="text-orange-500 font-bold">$17.99 <span class="line-through text-gray-500">$34.99</span></p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Kenya Tree Frag" data-price="17.99">Add to Cart</button>
+            </div>
+            <!-- Clearance Product 8 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Toadstool+Frag" alt="Toadstool Frag" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Toadstool Frag</h3>
+                <p class="text-gray-300 mb-4">Small piece of toadstool coral, slightly blemished.</p>
+                <p class="text-orange-500 font-bold">$19.99 <span class="line-through text-gray-500">$39.99</span></p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Toadstool Frag" data-price="19.99">Add to Cart</button>
+            </div>
+            <!-- Clearance Product 9 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Clove+Polyp+Frag" alt="Clove Polyp Frag" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Clove Polyp Frag</h3>
+                <p class="text-gray-300 mb-4">Waving polyps, small frag at a discount.</p>
+                <p class="text-orange-500 font-bold">$11.99 <span class="line-through text-gray-500">$22.99</span></p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Clove Polyp Frag" data-price="11.99">Add to Cart</button>
+            </div>
+            <!-- Clearance Product 10 -->
+            <div class="bg-gray-800 p-6 rounded-lg glow-purple">
+                <img src="https://via.placeholder.com/300x200?text=Palythoa+Frag" alt="Palythoa Frag" class="w-full h-48 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold text-lime-500">Palythoa Frag</h3>
+                <p class="text-gray-300 mb-4">Colorful polyp frag, perfect for beginners.</p>
+                <p class="text-orange-500 font-bold">$13.99 <span class="line-through text-gray-500">$26.99</span></p>
+                <button class="mt-4 bg-purple-600 text-white px-4 py-2 rounded glow-purple hover:bg-purple-700 add-to-cart" data-name="Palythoa Frag" data-price="13.99">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-6 text-center">
+        <p class="text-gray-300">© 2025 The Reefer Garden. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mock cart functionality using localStorage
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseFloat(button.getAttribute('data-price'));
+                const cart = JSON.parse(localStorage.getItem('cart')) || [];
+                const existingItem = cart.find(item => item.name === name);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ name, price, quantity: 1 });
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert(`${name} added to cart!`);
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96567a5b48448cd5',t:'MTc1MzU1OTk3MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
